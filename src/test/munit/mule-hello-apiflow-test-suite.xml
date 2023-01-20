@@ -11,7 +11,7 @@
 	<munit:test name="mule-hello-api-success-test-case" doc:id="a051eee3-1800-4ecc-ba4a-843a53687fed" description="Test">
 		<munit:execution >
 			<munit:set-event doc:name="Set Event" doc:id="9bcc081d-473b-4ede-b188-1bf12dd6eab6" >
-				<munit:attributes value='#[{queryParams:{firstName:"Prasanna",lastName:"R"}}]' />
+				<munit:attributes value='#[{queryParams:{firstName:"prasanna",lastName:"R"}}]' />
 			</munit:set-event>
 			<flow-ref doc:name="Flow-ref to mule-hello-apiflowFlow" doc:id="1752b8d9-43de-428a-a4d2-a6840558a12d" name="mule-hello-apiflowFlow"/>
 		</munit:execution>
