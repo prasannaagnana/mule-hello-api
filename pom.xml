@@ -20,6 +20,7 @@
 
 	<build>
 		<plugins>
+		
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
@@ -28,8 +29,29 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>3.8.0</version>
 				<extensions>true</extensions>
+				 <configuration>
+				
+<cloudHubDeployment>
+ <uri>https://anypoint.mulesoft.com</uri>
+ <muleVersion>${app.runtime}</muleVersion> 
+<username>${username}</username>
+ <password>${password}</password> 
+<applicationName>${cloudhub.application.name}</applicationName> 
+<environment>${environment}</environment>
+ <region>${region}</region> 
+<workers>${workers}</workers>
+ <workerType>${workerType}</workerType>
+ <properties>
+ <key>value</key>
+ </properties>
+ </cloudHubDeployment>
+				
+				</configuration>
+				
+				
+				
 			</plugin>
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
@@ -108,7 +130,15 @@
 	</repositories>
 
 	<pluginRepositories>
+	
+ <pluginRepository> 
+ <id>mule-public</id>
+  <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+   </pluginRepository> 
+
+	
 		<pluginRepository>
+		
 			<id>mulesoft-releases</id>
 			<name>MuleSoft Releases Repository</name>
 			<layout>default</layout>
